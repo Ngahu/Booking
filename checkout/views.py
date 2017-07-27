@@ -8,9 +8,9 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def checkout(request):
-    context = {
-
-    }
+    if request.method == 'POST':
+        print request.POST
+    context = {}
     return render(request,"checkout.html",context)
 
 

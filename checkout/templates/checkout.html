@@ -22,7 +22,7 @@ stripe.createToken(card).then(function(result) {
 {% block content %}
 <h1> check out page</h1>
 
-<form action="/charge" method="post" id="payment-form">
+<form action="" method="post" id="payment-form"> {% csrf_token %}
   <div class="form-row">
     <label for="card-element">
       Credit or debit card
