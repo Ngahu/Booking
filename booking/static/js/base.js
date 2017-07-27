@@ -1,25 +1,65 @@
-var $item = $('.carousel .item');
-var $wHeight = $(window).height();
-$item.eq(0).addClass('active');
-$item.height($wHeight);
-$item.addClass('full-screen');
+var stripe = Stripe('pk_test_c0lkXrVwajTVofpItz76t3hk');
 
-$('.carousel img').each(function() {
-  var $src = $(this).attr('src');
-  var $color = $(this).attr('data-color');
-  $(this).parent().css({
-    'background-image' : 'url(' + $src + ')',
-    'background-color' : $color
+// Create an instance of Elements
+var elements = stripe.elements();
+
+// Custom styling can be passed to options when creating an Element.
+// (Note that this demo uses a wider set of styles than the guide below.)
+var style = {
+  base: {
+    color: '#32325d',
+    lineHeight: '24px',
+    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+    fontSmoothing: 'antialiased',
+    fontSize: '16px',
+    '::placeholder': {
+      color: '#aab7c4'
+    }
+  },
+  invalid: {
+    color: '#fa755a',
+    iconColor: '#fa755a'
+  }
+};
+
+// Create an instance of the card Element
+var card = elements.create('card', {style: style});
+
+// Add an instance of the card Element into the `card-element` <div>
+card.mount('#card-element');
+
+// Handle real-time validation errors from the card Element.
+card.addEventListener('change', function(event) {
+  var displayError = document.getElementById('card-errors');
+  if (event.error) {
+    displayError.textContent = event.error.message;
+  } else {
+    displayError.textContent = '';
+  }
+});
+
+// Handle form submission
+var form = document.getElementById('payment-form');
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  stripe.createToken(card).then(function(result) {
+    if (result.error) {
+      // Inform the user if there was an error
+      var errorElement = document.getElementById('card-errors');
+      errorElement.textContent = result.error.message;
+    } else {
+      // Send the token to your server
+      stripeTokenHandler(result.token);
+    }
   });
-  $(this).remove();
 });
 
-$(window).on('resize', function (){
-  $wHeight = $(window).height();
-  $item.height($wHeight);
-});
-
-$('.carousel').carousel({
-  interval: 7000,
-  pause: "false"
+card.addEventListener('change', function(event) {
+  var displayError = document.getElementById('card-errors');
+  if (event.error) {
+    displayError.textContent = event.error.message;
+  } else {
+    displayError.textContent = '';
+  }
 });
