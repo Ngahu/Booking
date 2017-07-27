@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if messages%}
+<ul class="messages">
+    {% for  message in messages %}
+    <li {% if messages.tags %} class="{{ message.tags }}"{% endif %}>{{message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<div>
+
+    <h3> Owner:{{ instance.user }} </h3>
+
+				From:{{ instance.where_from }} <br>
+				To:{{ instance.where_to }} <br>
+				Date:{{ instance.date_travelling}} <br>
+				Class:{{ instance.class_of_choice }} <br>
+				Ticket(s) Number:{{ instance.travelling_persons }} <br>
+				Kids:{{ instance.kids }} <br>
+
+				<hr>
+
+</div>
+
+
+</body>
+</html>

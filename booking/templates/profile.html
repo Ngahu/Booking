@@ -7,7 +7,7 @@
 {% block content %}
 
 
-{% include "navbar.html" %}
+<!--todo add the nav bar here -->
 
 
     <!--
@@ -47,18 +47,23 @@ Licensed under MIT
 					<ul class="nav">
 						<li class="active">
 							<a href="#">
-							<i class="glyphicon glyphicon-home"></i>
-							Overview </a>
+							<i class="glyphicon glyphicon-dashboard"></i>
+							Booking History </a>
 						</li>
 						<li>
 							<a href="#">
-							<i class="glyphicon glyphicon-user"></i>
-							UserName:</a>
+							<i class="glyphicon glyphicon-earphone"></i>
+							Contact:+254704104008</a>
 						</li>
 						<li>
 							<a href="#" target="_blank">
-							<i class="glyphicon glyphicon-ok"></i>
-							Email : </a>
+							<i class="glyphicon glyphicon-credit-card"></i>
+							Credit Cards: </a>
+						</li>
+                        <li>
+							<a href="#" target="_blank">
+							<i class="glyphicon glyphicon-camera"></i>
+							My Travel Photos: </a>
 						</li>
 						<li>
 							<a href="#">
@@ -72,7 +77,23 @@ Licensed under MIT
 		</div>
 		<div class="col-md-9">
             <div class="profile-content">
-			   Some user related content goes here...
+			{{ title }}   Some user related content goes here... asssss <br>
+				<br>
+				<hr>
+				<hr>
+
+
+				{% for ticket in ticket_list %}
+				<a href='{{ ticket.get_absolute_url }}'> From:{{ ticket.where_from }}  </a>
+				 <br>
+				To:{{ ticket.where_to }} <br>
+				Date:{{ ticket.date_travelling}} <br>
+				Class:{{ ticket.class_of_choice }} <br>
+				Ticket(s) Number:{{ ticket.travelling_persons }} <br>
+				Kids:{{ ticket.kids }} <br>
+
+				<hr>
+				{% endfor %}
             </div>
 		</div>
 	</div>

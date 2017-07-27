@@ -1,0 +1,237 @@
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> {% block head_title %} Welcome  {% endblock head_title %}</title>
+    <!--the bootstrap css -->
+    <link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}'>
+    <link rel="stylesheet" href='{% static "css/bootstrap-theme.css" %}'>
+    <link rel="stylesheet" href='{% static "css/base.css" %}'>
+</head>
+<body>
+<! -- navigation bar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'booking:index' %}">TimeTravel</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        {% url 'index' as index %}
+        <li {% if request.path == index %} class="active"{% endif %}><a href="{% url 'booking:index' %}">Home </a></li>
+        <li><a href="{% url 'booking:book' %}">Book </a></li>
+        <li><a href="#">Prices </a></li>
+        <li><a href="#">Stations </a></li>
+
+        <li><a href="#">About </a></li>
+        <li><a href="#">Contact </a></li>
+        <li><a href="#">Discover </a></li>
+
+
+
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">FAQS</a></li>
+          {% if not request.user.is_authenticated %}
+        <li><a href="{% url 'account_login' %}">Login</a></li>
+            <li><a href="{% url 'account_signup' %}">SignUp</a></li>
+          {% else %}
+          <li><a href="{% url 'booking:profile' %}">Profile </a></li>
+          <li><a href="{% url 'account_logout' %}">Logout</a></li>
+          {% endif %}
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<! -- end of navigation bar -->
+
+<!--slider section -->
+<div class="container-fluid">
+    <div class="row">
+
+
+
+
+
+   <div id="mycarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#mycarousel" data-slide-to="1"></li>
+    <li data-target="#mycarousel" data-slide-to="2"></li>
+    <li data-target="#mycarousel" data-slide-to="3"></li>
+    <li data-target="#mycarousel" data-slide-to="4"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item">
+        <img src='{% static "media/slide1.jpg" %}' data-color="lightblue" alt="First Image">
+        <div class="carousel-caption">
+            <h3>Best Payment Service</h3>
+        </div>
+    </div>
+    <div class="item">
+        <img src='{% static "media/voi.jpg" %}' data-color="firebrick" alt="Second Image">
+        <div class="carousel-caption">
+            <h3>Second Image</h3>
+        </div>
+    </div>
+    <div class="item">
+        <img src='{% static "media/kibwezi.jpg" %}' data-color="violet" alt="Third Image">
+        <div class="carousel-caption">
+            <h3>Third Image</h3>
+        </div>
+    </div>
+    <div class="item">
+        <img src='{% static "media/mariakani.jpg" %}' data-color="lightgreen" alt="Fourth Image">
+        <div class="carousel-caption">
+            <h3>Fourth Image</h3>
+        </div>
+    </div>
+    <div class="item">
+        <img src='{% static "media/syokimau2.jpg" %}' data-color="#" alt="Fifth Image">
+        <div class="carousel-caption">
+            <h3>Fifth Image</h3>
+        </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#mycarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#mycarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+    </div>
+</div>
+
+
+
+<!--end ofslider section -->
+<div id="book">
+
+
+<!--the book know section form -->
+<div class="container-fluid">
+
+        <h2>Book Now!!</h2>
+					<form role="form">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group has-success has-feedback">
+									<label class="control-label" for="inputSuccess3">Input with success</label>
+									<input type="text" class="form-control" id="inputSuccess3">
+									<i class="fa fa-check form-control-feedback"></i>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group has-warning has-feedback">
+									<label class="control-label" for="inputWarning3">Input with warning</label>
+									<input type="text" class="form-control" id="inputWarning3">
+									<i class="fa fa-warning form-control-feedback"></i>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group has-error has-feedback">
+									<label class="control-label" for="inputError3">Input with error</label>
+									<input type="text" class="form-control" id="inputError3">
+									<i class="fa fa-times form-control-feedback"></i>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group has-feedback">
+									<label class="control-label">Username</label>
+									<input type="text" class="form-control">
+									<i class="fa fa-user form-control-feedback"></i>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group has-feedback">
+									<label class="control-label">Password</label>
+									<input type="password" class="form-control">
+									<i class="fa fa-lock form-control-feedback"></i>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group has-feedback">
+									<label class="control-label">Email</label>
+									<input type="email" class="form-control">
+									<i class="fa fa-envelope-o form-control-feedback"></i>
+								</div>
+							</div>
+						</div>
+					</form>
+					<form role="form">
+						<div class="form-group">
+							<label for="disabledTextInput2">Disabled input</label>
+							<input type="text" id="disabledTextInput2" class="form-control" placeholder="Disabled input" disabled="">
+						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" value="">
+								Option one is this and that—be sure to include why it's great
+							</label>
+						</div>
+						<div class="checkbox disabled">
+							<label>
+								<input type="checkbox" value="" disabled="">
+								Option two is disabled
+							</label>
+						</div>
+						<br>
+						<div class="radio">
+							<label>
+								<input type="radio" name="optionsRadios" id="optionsRadios4" value="option1" checked="">
+								Option one is this and that—be sure to include why it's great
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="optionsRadios" id="optionsRadios5" value="option2">
+								Option two can be something else and selecting it will deselect option one
+							</label>
+						</div>
+						<div class="radio disabled">
+							<label>
+								<input type="radio" name="optionsRadios" id="optionsRadios6" value="option3" disabled="">
+								Option three is disabled
+							</label>
+						</div>
+						<button type="submit" class="btn btn-default">Submit</button>
+					</form>
+				</div>
+			</div>
+
+
+</div>
+
+</div><!-- end of id -->
+<!--end of the book know section form -->
+
+
+
+
+<script src='{% static "js/jquery.js" %}'></script>
+<script src='{% static "js/bootstrap.min.js" %}'></script>
+<script src='{% static "js/base.js" %}'></script>
+</body>
+</html>
