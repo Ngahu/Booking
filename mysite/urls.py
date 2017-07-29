@@ -18,11 +18,15 @@ from django.conf.urls import include,url
 from django.conf.urls.static import static
 from django.contrib import admin
 
+from checkout.views import check_out
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^',include('booking.urls',namespace='booking')),
-    url(r'^checkout/',include('checkout.urls',namespace='checkout')),
+    #url(r'^checkout/',include('checkout.urls',namespace='check_out')),
     url(r'^accounts/', include('allauth.urls')),
+    url(r'^checkout/', check_out,name='check-out'),
     ]
 
 

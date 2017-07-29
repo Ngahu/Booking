@@ -10,100 +10,11 @@
 <!--todo add the nav bar here -->
 
 
-    <!--
-User Profile Sidebar by @keenthemes
-A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
-Licensed under MIT
--->
+<div class="col-md-6" id="nasa">
 
-<div class="container-fluid">
-    <div class="row profile">
-		<div class="col-md-3">
-			<div class="profile-sidebar">
-				<!-- SIDEBAR USERPIC -->
-				<div class="profile-userpic">
-					<img src='{% static "media/profile_icon.png" %}' class="img-responsive" alt="">
+<h5>USERNAME:::{{user.username}}</h5>
+      <td>{{ instance.description }}</td>
+      <td> {{ instance.profile_picture }}  </td>
 
-				</div>
-				<!-- END SIDEBAR USERPIC -->
-				<!-- SIDEBAR USER TITLE -->
-				<div class="profile-usertitle">
-					<div class="profile-usertitle-name">
-						Name:{{ user.username }}
-					</div>
-					<div class="profile-usertitle-job">
-						Email:{{ user.email }}
-					</div>
-				</div>
-				<!-- END SIDEBAR USER TITLE -->
-				<!-- SIDEBAR BUTTONS -->
-				<div class="profile-userbuttons">
-					<button type="button" class="btn btn-success btn-sm">Follow</button>
-					<button type="button" class="btn btn-danger btn-sm">Message</button>
-				</div>
-				<!-- END SIDEBAR BUTTONS -->
-				<!-- SIDEBAR MENU -->
-				<div class="profile-usermenu">
-					<ul class="nav">
-						<li class="active">
-							<a href="#">
-							<i class="glyphicon glyphicon-dashboard"></i>
-							Booking History </a>
-						</li>
-						<li>
-							<a href="#">
-							<i class="glyphicon glyphicon-earphone"></i>
-							Contact:+254704104008</a>
-						</li>
-						<li>
-							<a href="#" target="_blank">
-							<i class="glyphicon glyphicon-credit-card"></i>
-							Credit Cards: </a>
-						</li>
-                        <li>
-							<a href="#" target="_blank">
-							<i class="glyphicon glyphicon-camera"></i>
-							My Travel Photos: </a>
-						</li>
-						<li>
-							<a href="#">
-							<i class="glyphicon glyphicon-flag"></i>
-							Help </a>
-						</li>
-					</ul>
-				</div>
-				<!-- END MENU -->
-			</div>
-		</div>
-		<div class="col-md-9">
-            <div class="profile-content">
-			{{ title }}   Some user related content goes here... asssss <br>
-				<br>
-				<hr>
-				<hr>
-
-
-				{% for ticket in ticket_list %}
-				<a href='{{ ticket.get_absolute_url }}'> From:{{ ticket.where_from }}  </a>
-				 <br>
-				To:{{ ticket.where_to }} <br>
-				Date:{{ ticket.date_travelling}} <br>
-				Class:{{ ticket.class_of_choice }} <br>
-				Ticket(s) Number:{{ ticket.travelling_persons }} <br>
-				Kids:{{ ticket.kids }} <br>
-
-				<hr>
-				{% endfor %}
-            </div>
-		</div>
-	</div>
 </div>
-<center>
-
-</center>
-<br>
-<br>
-</div>
-
-
 {% endblock %}

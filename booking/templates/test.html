@@ -1,0 +1,586 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+          <!--the bootstrap css -->
+    <link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}'>
+    <link rel="stylesheet" href='{% static "css/bootstrap-material-design.css" %}'>
+     <link rel="stylesheet" href='{% static "css/bootstrap-theme.css" %}'>
+      <link rel="stylesheet" href='{% static "css/ripples.min.css" %}'>
+    <link rel="stylesheet" href='{% static "css/font-awesome.css" %}'>
+    <link rel="stylesheet" href='{% static "css/style.css" %}'>
+    <link rel="stylesheet" href='{% static "css/base.css" %}'>
+     <link rel="stylesheet" href='{% static "css/colors_01.css" %}'>
+
+</head>
+<body class="home_alt">
+
+{% block content %}
+
+
+    <!-- LOADER -->
+    <div id="preloader">
+        <img class="preloader" src='{% static "media/logo-invert.png" %}' alt="">
+    </div><!-- end loader -->
+    <!-- END LOADER -->
+
+    <div id="wrapper">
+        <header class="header">
+            <div class="container-fluid">
+                <nav class="navbar navbar-default">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="index-alt.html"><i class="material-icons">chat</i> Helper</a>
+                        </div>
+                        <div class="navbar-collapse collapse navbar-responsive-collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="active"><a href="index-alt.html">Home</a></li>
+                                <li><a href="index-alt-topics.html">Support Topics</a></li>
+                                <li><a href="index-alt-login.html">Create Account</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#LoginModal"><i class="material-icons">lock</i> Login</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div><!-- end container -->
+        </header><!-- end header -->
+
+        <section class="section welcome welcome_01 bg1">
+            <div class="container">
+                <div class="row">
+                    <div class="content col-md-8 col-md-offset-2">
+                        <div class="welcome-text text-center">
+                            <h1>Helper <strong>help-desk</strong> support</h1>
+                            <p>Welcome to the Helper Support Portal! Search your answers with the search box above, or if you're stuck you can create a support ticket.</p>
+                        </div>
+                        <div class="widget clearfix">
+                            <div class="panel panel-primary">
+                                <div class="panel-body">
+                                    <form class="site-search">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" placeholder="How may I help you today?">
+                                        </div>
+                                        <div class="form-group clearfix"> <!-- inline style is just to demo custom css to put checkbox below input above -->
+                                            <div class="checkbox pull-left">
+                                                <label>
+                                                    <input type="checkbox"> &nbsp;Topics
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> &nbsp;Forums
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> &nbsp;Knowledge Base
+                                                </label>
+                                            </div>
+                                            <div class="submit-button pull-right">
+                                                <a class="btn btn-raised btn-info gr" href="#"><i class="material-icons">search</i> Search</a>
+                                            </div>
+                                        </div>
+                                    </form><!-- end well -->
+                                </div>
+                            </div>
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
+                </div><!-- end container -->
+            </div><!-- end container -->
+        </section><!-- end section -->
+
+        <section class="section lb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="topic_top row clearfix">
+                            <div class="col-md-9 hidden-xs">
+                                <p>Showing 1-10 of 170 Topics</p>
+                            </div>
+
+                            <div class="col-md-3 text-right">
+                                <select class="form-control">
+                                    <option>Popular topics</option>
+                                    <option>Newest topics</option>
+                                    <option>Older topics</option>
+                                </select>
+                            </div>
+                        </div><!-- end shop-top -->
+
+                        <aside class="topic-page topic-list blog-list forum-list single-forum">
+                            <article class="well btn-group-sm clearfix">
+                                <div class="topic-desc row-fluid clearfix">
+                                    <div class="col-sm-2 text-center publisher-wrap">  
+                                        <img src= '{% static "media/uploads/team_01.jpg" %}'  alt="" class="avatar img-circle img-responsive">
+                                        <h5>Martin Martines</h5>
+                                        <small class="offline">Offline</small>
+                                    </div>
+                                    <div class="col-sm-10">
+
+                                        <footer class="topic-footer clearfix">
+                                            <div class="pull-left">
+                                                <ul class="list-inline tags">
+                                                    <li><a href="#">WorldCamp</a></li>
+                                                    <li><a href="#">Community</a></li>
+                                                    <li><a href="#">WordPress</a></li>
+                                                </ul>
+                                                <!-- end tags -->
+                                            </div>
+                                        </footer>
+
+                                        <h4> <a href="single-question.html">How can I change embed code?</a></h4>
+                                        <div class="blog-meta clearfix">
+                                            <small><a href="#">11 Voices</a></small>
+                                            <small>September 18, 2016</small>
+                                            <small>in: <a href="#"> Item Support</a></small>
+                                        </div>
+
+                                        <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam..</p>
+
+                                        <a href="single-question.html" class="readmore" title="">View full question →</a>
+                                    </div>
+                                </div><!-- end tpic-desc -->
+
+                                <div id="reply" class="forum-answer topic-desc clearfix">
+                                    <div class="row">
+                                        <div class="col-sm-2 text-center publisher-wrap">
+                                            <img src='{% static "media/uploads/team_06.jpg" %}' alt="" class="avatar img-circle img-responsive">
+                                            <h5>Martin</h5>
+                                            <small class="online">Online</small>
+                                        </div>
+
+                                        <div class="col-md-10">
+                                            <div class="form-group">
+                                                <label for="textArea" class="col-md-2 control-label">Reply</label>
+                                                <div class="col-md-10">
+                                                    <textarea class="form-control" rows="3" id="textArea"></textarea>
+                                                    <a class="btn btn-raised btn-info gr" href="#">Reply</a>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col -->
+                                    </div><!-- end row -->
+                                </div><!-- end answer -->
+
+                                <div class="topic-meta clearfix">
+                                    <div class="pull-left">
+                                        <a class="btn btn-default btn-fab btn-fab-mini" href="#" data-toggle="tooltip" data-placement="bottom" title="Like">
+                                            <i class="material-icons">thumb_up</i>
+                                        </a>
+                                        <a class="btn btn-default btn-fab btn-fab-mini" href="#" data-toggle="tooltip" data-placement="bottom" title="Un Like">
+                                            <i class="material-icons">thumb_down</i>
+                                        </a>
+                                        <a class="btn btn-default btn-fab btn-fab-mini" href="#" data-toggle="tooltip" data-placement="bottom" title="Bookmark">
+                                            <i class="material-icons">bookmark_border</i>
+                                        </a>
+                                    </div>
+                                    <!-- end left -->
+
+                                    <div class="pull-right">
+                                        <div class="customshare">
+                                            <div class="list">
+                                                <div class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">share</i>
+                                                    <ul class="list-inline">
+                                                        <li><a href="#" class="tw"><i class="fa fa-twitter"></i></a></li>
+                                                        <li><a href="#" class="fb"><i class="fa fa-facebook"></i></a></li>
+                                                        <li><a href="#" class="gp"><i class="fa fa-google-plus"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end right -->
+                                </div>
+                                <!-- end topic-meta -->
+                            </article>
+
+                            <article class="well btn-group-sm clearfix">
+                                <div class="topic-desc row-fluid clearfix">
+                                    <div class="col-sm-2 text-center publisher-wrap">
+                                        <img src='{% static "media/uploads/team_01.jpg" %}' alt="" class="avatar img-circle img-responsive">
+                                        <h5>Seda Sanders</h5>
+                                        <small class="offline">Offline</small>
+                                    </div>
+                                    <div class="col-sm-10">
+
+                                        <footer class="topic-footer clearfix">
+                                            <div class="pull-left">
+                                                <ul class="list-inline tags">
+                                                    <li><a href="#">HTML</a></li>
+                                                    <li><a href="#">Page Builder</a></li>
+                                                    <li><a href="#">CSS</a></li>
+                                                </ul>
+                                                <!-- end tags -->
+                                            </div>
+                                        </footer>
+
+                                        <h4> <a href="single-question.html">How to use page builder on HTML templates?</a></h4>
+                                        <div class="blog-meta clearfix">
+                                            <small><a href="#">11 Voices</a></small>
+                                            <small>September 18, 2016</small>
+                                            <small>in: <a href="#"> Item Support</a></small>
+                                        </div>
+
+                                        <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam..</p>
+
+                                        <a href="single-question.html" class="readmore" title="">View full question →</a>
+                                    </div>
+                                </div><!-- end tpic-desc -->
+
+                                <div id="reply" class="forum-answer topic-desc clearfix">
+                                    <div class="row">
+                                        <div class="col-sm-2 text-center publisher-wrap">
+                                            <img src='{% static "media/uploads/team_01.jpg" %}' alt="" class="avatar img-circle img-responsive">
+                                            <h5>Martin</h5>
+                                            <small class="online">Online</small>
+                                        </div>
+
+                                        <div class="col-md-10">
+                                            <div class="form-group">
+                                                <label for="textArea" class="col-md-2 control-label">Reply</label>
+                                                <div class="col-md-10">
+                                                    <textarea class="form-control" rows="3" id="textArea"></textarea>
+                                                    <a class="btn btn-raised btn-info gr" href="#">Reply</a>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col -->
+                                    </div><!-- end row -->
+                                </div><!-- end answer -->
+
+                                <div class="topic-meta clearfix">
+                                    <div class="pull-left">
+                                        <a class="btn btn-default btn-fab btn-fab-mini" href="#" data-toggle="tooltip" data-placement="bottom" title="Like">
+                                            <i class="material-icons">thumb_up</i>
+                                        </a>
+                                        <a class="btn btn-default btn-fab btn-fab-mini" href="#" data-toggle="tooltip" data-placement="bottom" title="Un Like">
+                                            <i class="material-icons">thumb_down</i>
+                                        </a>
+                                        <a class="btn btn-default btn-fab btn-fab-mini" href="#" data-toggle="tooltip" data-placement="bottom" title="Bookmark">
+                                            <i class="material-icons">bookmark_border</i>
+                                        </a>
+                                    </div>
+                                    <!-- end left -->
+
+                                    <div class="pull-right">
+                                        <div class="customshare">
+                                            <div class="list">
+                                                <div class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">share</i>
+                                                    <ul class="list-inline">
+                                                        <li><a href="#" class="tw"><i class="fa fa-twitter"></i></a></li>
+                                                        <li><a href="#" class="fb"><i class="fa fa-facebook"></i></a></li>
+                                                        <li><a href="#" class="gp"><i class="fa fa-google-plus"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end right -->
+                                </div>
+                                <!-- end topic-meta -->
+                            </article>
+
+                            <article class="well btn-group-sm clearfix">
+                                <div class="topic-desc row-fluid clearfix">
+                                    <div class="col-sm-2 text-center publisher-wrap">
+                                        <img src='{% static "media/uploads/team_01.jpg" %}' alt="" class="avatar img-circle img-responsive">
+                                        <h5>Jenny Andreson</h5>
+                                        <small class="offline">Offline</small>
+                                    </div>
+                                    <div class="col-sm-10">
+
+                                        <footer class="topic-footer clearfix">
+                                            <div class="pull-left">
+                                                <ul class="list-inline tags">
+                                                    <li><a href="#">jQuery</a></li>
+                                                    <li><a href="#">JavaScript</a></li>
+                                                </ul>
+                                                <!-- end tags -->
+                                            </div>
+                                        </footer>
+
+                                        <h4> <a href="single-question.html">Which version jQuery I need to use?</a></h4>
+                                        <div class="blog-meta clearfix">
+                                            <small><a href="#">11 Voices</a></small>
+                                            <small>September 18, 2016</small>
+                                            <small>in: <a href="#"> Item Support</a></small>
+                                        </div>
+
+                                        <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam..</p>
+
+                                        <a href="single-question.html" class="readmore" title="">View full question →</a>
+                                    </div>
+                                </div><!-- end tpic-desc -->
+
+                                <div id="reply" class="forum-answer topic-desc clearfix">
+                                    <div class="row">
+                                        <div class="col-sm-2 text-center publisher-wrap">
+                                            <img src='{% static "media/uploads/team_01.jpg" %}' alt="" class="avatar img-circle img-responsive">
+                                            <h5>Martin</h5>
+                                            <small class="online">Online</small>
+                                        </div>
+
+                                        <div class="col-md-10">
+                                            <div class="form-group">
+                                                <label for="textArea" class="col-md-2 control-label">Reply</label>
+                                                <div class="col-md-10">
+                                                    <textarea class="form-control" rows="3" id="textArea"></textarea>
+                                                    <a class="btn btn-raised btn-info gr" href="#">Reply</a>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col -->
+                                    </div><!-- end row -->
+                                </div><!-- end answer -->
+
+                                <div class="topic-meta clearfix">
+                                    <div class="pull-left">
+                                        <a class="btn btn-default btn-fab btn-fab-mini" href="#" data-toggle="tooltip" data-placement="bottom" title="Like">
+                                            <i class="material-icons">thumb_up</i>
+                                        </a>
+                                        <a class="btn btn-default btn-fab btn-fab-mini" href="#" data-toggle="tooltip" data-placement="bottom" title="Un Like">
+                                            <i class="material-icons">thumb_down</i>
+                                        </a>
+                                        <a class="btn btn-default btn-fab btn-fab-mini" href="#" data-toggle="tooltip" data-placement="bottom" title="Bookmark">
+                                            <i class="material-icons">bookmark_border</i>
+                                        </a>
+                                    </div>
+                                    <!-- end left -->
+
+                                    <div class="pull-right">
+                                        <div class="customshare">
+                                            <div class="list">
+                                                <div class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">share</i>
+                                                    <ul class="list-inline">
+                                                        <li><a href="#" class="tw"><i class="fa fa-twitter"></i></a></li>
+                                                        <li><a href="#" class="fb"><i class="fa fa-facebook"></i></a></li>
+                                                        <li><a href="#" class="gp"><i class="fa fa-google-plus"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end right -->
+                                </div>
+                                <!-- end topic-meta -->
+                            </article>
+
+                            <article class="well btn-group-sm clearfix">
+                                <div class="topic-desc row-fluid clearfix">
+                                    <div class="col-sm-2 text-center publisher-wrap">
+                                        <img src='{% static "media/uploads/team_01.jpg" %}' alt="" class="avatar img-circle img-responsive">
+                                        <h5>Sema Bobsen</h5>
+                                        <small class="online">Online</small>
+                                    </div>
+                                    <div class="col-sm-10">
+
+                                        <footer class="topic-footer clearfix">
+                                            <div class="pull-left">
+                                                <ul class="list-inline tags">
+                                                    <li><a href="#">jQuery</a></li>
+                                                    <li><a href="#">JavaScript</a></li>
+                                                </ul>
+                                                <!-- end tags -->
+                                            </div>
+                                        </footer>
+
+                                        <h4> <a href="single-question.html">Revolution Slider settings: How to remove arrows?</a></h4>
+                                        <div class="blog-meta clearfix">
+                                            <small><a href="#">11 Voices</a></small>
+                                            <small>September 18, 2016</small>
+                                            <small>in: <a href="#"> Item Support</a></small>
+                                        </div>
+
+                                        <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam..</p>
+
+                                        <a href="single-question.html" class="readmore" title="">View full question →</a>
+                                    </div>
+                                </div><!-- end tpic-desc -->
+
+                                <div id="reply" class="forum-answer topic-desc clearfix">
+                                    <div class="row">
+                                        <div class="col-sm-2 text-center publisher-wrap">
+                                            <img src='{% static "media/uploads/team_01.jpg" %}' alt="" class="avatar img-circle img-responsive">
+                                            <h5>Martin</h5>
+                                            <small class="online">Online</small>
+                                        </div>
+
+                                        <div class="col-md-10">
+                                            <div class="form-group">
+                                                <label for="textArea" class="col-md-2 control-label">Reply</label>
+                                                <div class="col-md-10">
+                                                    <textarea class="form-control" rows="3" id="textArea"></textarea>
+                                                    <a class="btn btn-raised btn-info gr" href="#">Reply</a>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col -->
+                                    </div><!-- end row -->
+                                </div><!-- end answer -->
+
+                                <div class="topic-meta clearfix">
+                                    <div class="pull-left">
+                                        <a class="btn btn-default btn-fab btn-fab-mini" href="#" data-toggle="tooltip" data-placement="bottom" title="Like">
+                                            <i class="material-icons">thumb_up</i>
+                                        </a>
+                                        <a class="btn btn-default btn-fab btn-fab-mini" href="#" data-toggle="tooltip" data-placement="bottom" title="Un Like">
+                                            <i class="material-icons">thumb_down</i>
+                                        </a>
+                                        <a class="btn btn-default btn-fab btn-fab-mini" href="#" data-toggle="tooltip" data-placement="bottom" title="Bookmark">
+                                            <i class="material-icons">bookmark_border</i>
+                                        </a>
+                                    </div>
+                                    <!-- end left -->
+
+                                    <div class="pull-right">
+                                        <div class="customshare">
+                                            <div class="list">
+                                                <div class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">share</i>
+                                                    <ul class="list-inline">
+                                                        <li><a href="#" class="tw"><i class="fa fa-twitter"></i></a></li>
+                                                        <li><a href="#" class="fb"><i class="fa fa-facebook"></i></a></li>
+                                                        <li><a href="#" class="gp"><i class="fa fa-google-plus"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end right -->
+                                </div>
+                                <!-- end topic-meta -->
+                            </article>
+
+                            <article class="well btn-group-sm clearfix">
+                                <ul class="pagination">
+                                    <li class="disabled"><a href="javascript:void(0)">&laquo;</a></li>
+                                    <li class="active"><a href="javascript:void(0)">1</a></li>
+                                    <li><a href="javascript:void(0)">2</a></li>
+                                    <li><a href="javascript:void(0)">3</a></li>
+                                    <li><a href="javascript:void(0)">4</a></li>
+                                    <li><a href="javascript:void(0)">&raquo;</a></li>
+                                </ul>
+                            </article>
+                        </aside>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end section -->
+
+        <div class="stickyfooter">
+            <div id="sitefooter" class="container">
+                <div id="copyright" class="row">
+                    <div class="col-md-6 col-sm-12 text-left">
+                        <p>Helper ® is a designed and registered trademark of <a href="https://www.similaricons.com/">Similar Icons</a> INC.</p>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <ul class="list-inline text-right">
+                            <li><a href="#">Terms of Usage</a></li>
+                            <li><a href="#">Copyrights</a></li>
+                            <li><a href="#">License</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHAT -->
+        <div class="chat-wrapper">
+            <div class="panel panel-primary">
+                <div class="panel-heading" id="chatcordion">
+                    <a class="open-support btn btn-raised btn-info" data-toggle="collapse" data-parent="#chatcordion" href="#chatcordion1">
+                        <i class="material-icons">chat</i>
+                    </a>
+                </div>
+                <div class="panel-collapse collapse" id="chatcordion1">
+                    <span class="chat-logo"><i class="material-icons">announcement</i> Helper Support Chat</span>
+                    <div class="panel-body">
+                        <ul class="chat">
+                            <li class="left clearfix">
+                                <span class="chat-img">
+                                    <img src='{% static "media/uploads/team_01.jpg" %}' alt="" class="avatar img-circle img-responsive alignleft">
+                                </span>
+                                <div class="chat-body clearfix">
+                                    <div class="chat-header">
+                                        <strong class="primary-font">Jenny DOE</strong> <small class="pull-right text-muted">
+                                        <span class="fa fa-clock-o"></span>12 mins ago</small>
+                                    </div>
+                                    <p>Hello anyone here? I need to purchase web hosting!</p>
+                                </div>
+                            </li>
+
+                            <li class="left clearfix">
+                                <span class="chat-img">
+                                    <img src='{% static "media/uploads/team_01.jpg" %}' alt="" class="avatar img-circle img-responsive alignleft">
+                                </span>
+                                <div class="chat-body clearfix">
+                                    <div class="chat-header">
+                                        <strong class="label label-primary supportstaff">Staff</strong> <small class="pull-right text-muted">
+                                        <span class="fa fa-clock-o"></span>13 mins ago</small>
+                                    </div>
+                                    <p>Hey Jenny! Welcome to the Helper support chat!</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="panel-footer">
+                        <input id="btn-input" type="text" class="form-control" placeholder="Type your message here..." />
+                        <button class="btn btn-raised btn-primary gr" id="btn-chat">Send</button>
+                    </div><!-- end panel-footer -->
+                </div><!-- end panel-collapse -->
+            </div><!-- end panel -->
+        </div><!-- end chat-wrapper -->
+
+        <!-- Modal -->
+        <div id="LoginModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Login Account</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="widget clearfix">
+                            <div class="panel panel-primary">
+                                <div class="panel-body">
+                                    <div class="login-buttons">
+                                    <a href="#" class="btn btn-raised btn-facebook btn-block"><i class="fa fa-facebook"></i> Login with Facebook</a>
+                                    <a href="#" class="btn btn-raised btn-twitter btn-block"><i class="fa fa-twitter"></i> Login with Twitter</a>
+                                    <a href="#" class="btn btn-raised btn-google-plus btn-block"><i class="fa fa-google-plus"></i> Login with Google+</a>
+                                    </div>
+
+                                    <form class="sidebar-login">
+                                        <input type="text" class="form-control" placeholder="Username">
+                                        <input type="text" class="form-control" placeholder="Password">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> &nbsp;&nbsp;Remember me
+                                            </label>
+                                        </div>
+                                        <button type="button" class="btn btn-raised btn-info gr">Login</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <small>No account? <a href="login.html">Register</a></small>
+                        </div><!-- end widget -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end wrapper -->
+{% endblock %}
+   <script src="https://js.stripe.com/v3/"></script>
+<script src='{% static "js/jquery.js" %}'></script>
+<script src='{% static "js/bootstrap.min.js" %}'></script>
+<script src='{% static "js/base.js" %}'></script>
+<script src='{% static "js/ripples.min.js" %}'></script>
+<script src='{% static "js/material.min.js" %}'></script>
+<script src='{% static "js/custom.js" %}'></script>
+
+
+      
+
+</body>
+</html>

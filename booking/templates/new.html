@@ -32,8 +32,8 @@
         <li><a href="#">Prices </a></li>
         <li><a href="#">Stations </a></li>
 
-        <li><a href="#">About </a></li>
-        <li><a href="#">Contact </a></li>
+        <li><a href="#">traintimes and fares </a></li>
+        <li><a href="#">Check in  </a></li>
         <li><a href="#">Discover </a></li>
 
 
@@ -46,7 +46,7 @@
         <li><a href="{% url 'account_login' %}">Login</a></li>
             <li><a href="{% url 'account_signup' %}">SignUp</a></li>
           {% else %}
-          <li><a href="{% url 'booking:profile' %}">Profile </a></li>
+          <li><a href="{% url 'booking:profile' %}">WELCOME {{user.username}} </a></li>
           <li><a href="{% url 'account_logout' %}">Logout</a></li>
           {% endif %}
       </ul>
