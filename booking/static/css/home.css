@@ -1,0 +1,67 @@
+body {
+  background: #f7f7f7;
+}
+
+
+.thumbnail {
+  background: none;
+  border: 0;
+}
+
+.carousel-control.left {
+  background: none;
+}
+
+.carousel-control.right {
+  background: none;
+}
+
+a.left.carousel-control {
+  background: #fff;
+  border: 1px solid #b9b9b9;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  height: 52px;
+  margin: 150px 0 0 4px;
+  width: 52px;
+}
+
+a.right.carousel-control {
+  background: #fff;
+  border: 1px solid #b9b9b9;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  height: 52px;
+  margin: 150px 4px 0 0;
+  width: 52px;
+}
+
+.glyphicon.glyphicon-chevron-left {
+  margin-top: -20px;
+}
+
+.glyphicon.glyphicon-chevron-right {
+  margin-top: -20px;
+  margin-right: -13px;
+}
+
+.glyphicon.glyphicon-chevron-left:before, .glyphicon.glyphicon-chevron-right:before  {
+  color: #676767;
+  font-size: 18px;
+}
+
+ol.carousel-indicators {
+  margin-bottom: -100px;
+}
+
+ol.carousel-indicators li {
+  background: #fff;
+  border: 1px solid #b9b9b9;
+}
+
+ol.carousel-indicators li.active {
+  background: #2980b9;
+  border: 1px solid transparent;
+}
